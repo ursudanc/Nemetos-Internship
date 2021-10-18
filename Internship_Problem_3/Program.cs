@@ -15,7 +15,7 @@ namespace Internship_Problem_3
             //for (int i = 0; i < words.Length; i++)
              //if(words[i]=="*")
 
-
+            // test/
         }
     }
 }
