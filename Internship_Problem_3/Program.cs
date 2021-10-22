@@ -7,15 +7,12 @@ namespace Internship_Problem_3
     {
         static void Main(string[] args)
         {
-            int expr;
-            bool init = false;
 
-            string expression = "9 * 9 + 6 / 7 - 3 + 12";
-            string[] words = expression.Split(' ');
-            //for (int i = 0; i < words.Length; i++)
-             //if(words[i]=="*")
+            Console.WriteLine(new Evaluator().Evaluate("2-20-1*(7-2)"));
+            Console.WriteLine(new Evaluator().Evaluate("2+10+100/500"));
+            Console.WriteLine(new Evaluator().Evaluate("3+3+3+3*50+(10-9*3)"));
 
-            // test/
+
         }
     }
 }
