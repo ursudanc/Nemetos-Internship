@@ -79,7 +79,7 @@ namespace PaperPlanes
                     var positions = position.Split(",");
                     var x = int.Parse(positions[0]);
                     var y = int.Parse(positions[1]);
-                    if ((x < 0 || x > 7) && (y < 0 || y > 7))
+                    if ((x < 0 || x > 7) || (y < 0 || y > 7))
                     {
                         throw new IndexOutOfRangeException();
                     }
