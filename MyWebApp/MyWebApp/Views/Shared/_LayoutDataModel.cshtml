@@ -1,0 +1,54 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <style>
+        ul.nav {
+            padding-left: 0px;
+            background-color: #3D99CE;
+            text-align: left;
+        }
+
+            ul.nav > li {
+                display: inline-block;
+                padding: 10px 20px;
+            }
+
+                ul.nav > li:hover {
+                    background-color: #2779BF;
+                }
+
+                ul.nav > li > a {
+                    color: white;
+                    text-decoration: none;
+                }
+    </style>
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <ul class="nav">
+        <li style="display:inline">@Html.ActionLink("Application name", "Index", "Admin", new { area = "" }, new { @class = "navbar-brand" })</li>
+        <li style="display:inline">@Html.ActionLink("Employees", "Index", "Employees")</li>
+        <li style="display:inline">@Html.ActionLink("Social Media", "Index", "Socials")</li>
+    </ul>
+
+    <div class="container body-content">
+        @if (TempData["Message"] != null)
+        {
+            <div class="alert-info">
+                @TempData["Message"];
+            </div>
+        }
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+        </footer>
+    </div>
+    <script src="~/Scripts/vendor/jquery-1.9.1.min.js"></script>
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+</body>
+</html>
