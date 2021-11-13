@@ -6,15 +6,4 @@
 //     Manual changes to this file will be overwritten if the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
-public class EmployeeSocialsData
-{
-    public byte[] Image { get; set; }
-    public string Name { get; set; }
-    public string Intro { get; set; }
-    public string Facebook { get; set; }
-    public string Google { get; set; }
-    public string Twitter { get; set; }
-    public string LinkedIn { get; set; }
-
-}
 

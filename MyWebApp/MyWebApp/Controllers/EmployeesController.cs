@@ -50,7 +50,7 @@ namespace MyWebApp.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create(Employee model, HttpPostedFileBase image1)
         {
-            if (image1 != null)
+            if (ModelState.IsValid)
             {
                 model.Image = new byte[image1.ContentLength];
                 image1.InputStream.Read(model.Image, 0, image1.ContentLength);
@@ -58,7 +58,6 @@ namespace MyWebApp.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-
             ViewBag.EmployeeId = new SelectList(db.Socials, "EmployeeId", "Facebook", model.EmployeeId);
             return View(model);
         }

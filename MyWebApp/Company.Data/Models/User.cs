@@ -18,7 +18,7 @@ namespace Company.Data.Models
     {
         public int UserID { get; set; }
         [DisplayName("User Name")]
-        [Required(ErrorMessage ="This field is required.")]
+        [Required(ErrorMessage = "This field is required.")]
         public string Username { get; set; }
         [DataType(DataType.Password)]
         [Required(ErrorMessage = "This field is required.")]

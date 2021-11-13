@@ -11,14 +11,16 @@ namespace Company.Data.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.Web;
+
     public partial class Employee
     {
         public int EmployeeId { get; set; }
         public byte[] Image { get; set; }
         public string Name { get; set; }
         public string Intro { get; set; }
-    
+
         public virtual Social Social { get; set; }
+
     }
 }
