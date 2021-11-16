@@ -1,12 +1,13 @@
-﻿
+﻿@model IEnumerable<Company.Data.Models.Employee>
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 <html>
 <body>
-@Html.Partial("About_us_Title");
-@Html.Partial("About_us_Body");
-@Html.Partial("About_us_Company");
+    @Html.Partial("About_us_Title");
+    @Html.Partial("About_us_Body");
+    @Html.Partial("About_us_Company",Model);
+
 </body>
 </html>

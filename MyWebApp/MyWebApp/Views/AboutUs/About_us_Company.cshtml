@@ -1,40 +1,29 @@
-﻿ <!-- Company team -->
+﻿@model IEnumerable<Company.Data.Models.Employee>
+<!-- Company team -->
+
 <section id="about-us" class="container main">
+    <hr>
     <h1 class="center">Company Team</h1>
     <hr>
     <div class="row-fluid">
-        <div class="span3">
-            <div class="box">
-                <p><img src="~/images/sample/team1.jpg" alt=""></p>
-                <h5>John Smith</h5>
-                <p>Nullam ornare, odio eu lacinia venenatis, dui purus varius odio, in pellentesque purus nibh in libero. Nullam magna felis.</p>
-                <a class="btn btn-social btn-facebook" href="#"><i class="icon-facebook"></i></a> <a class="btn btn-social btn-google-plus" href="#"><i class="icon-google-plus"></i></a> <a class="btn btn-social btn-twitter" href="#"><i class="icon-twitter"></i></a> <a class="btn btn-social btn-linkedin" href="#"><i class="icon-linkedin"></i></a>
+        @foreach (var item in Model)
+        {
+
+            <div class="span3">
+                <div class="box">
+                    @{
+                        var base64 = Convert.ToBase64String(item.Image);
+                        var imgsrc = string.Format("data:image/gif;base64,{0}", base64);
+                    }
+                    <p><img src='@imgsrc' alt=""></p>
+                    <h5>@Html.DisplayFor(modelItem => item.Name) </h5>
+                    <p> @Html.DisplayFor(modelItem => item.Intro) </p>
+                    <a class="btn btn-social btn-facebook" href="@Html.DisplayFor(modelItem => item.Social.Facebook)"><i class="icon-facebook"></i></a> <a class="btn btn-social btn-google-plus" href="@Html.DisplayFor(modelItem => item.Social.Google)"><i class="icon-google-plus"></i></a> <a class="btn btn-social btn-twitter" href="@Html.DisplayFor(modelItem => item.Social.Twitter)"><i class="icon-twitter"></i></a> <a class="btn btn-social btn-linkedin" href="@Html.DisplayFor(modelItem => item.Social.LinkedIn)"><i class="icon-linkedin"></i></a>
+                </div>
             </div>
-        </div>
-        <div class="span3">
-            <div class="box">
-                <p><img src="~/images/sample/team2.jpg" alt=""></p>
-                <h5>Alice Schulth</h5>
-                <p>Nullam ornare, odio eu lacinia venenatis, dui purus varius odio, in pellentesque purus nibh in libero. Nullam magna felis.</p>
-                <a class="btn btn-social btn-facebook" href="#"><i class="icon-facebook"></i></a> <a class="btn btn-social btn-google-plus" href="#"><i class="icon-google-plus"></i></a> <a class="btn btn-social btn-twitter" href="#"><i class="icon-twitter"></i></a> <a class="btn btn-social btn-linkedin" href="#"><i class="icon-linkedin"></i></a>
-            </div>
-        </div>
-        <div class="span3">
-            <div class="box">
-                <p><img src="~/images/sample/team3.jpg" alt=""></p>
-                <h5>Helen Cooper</h5>
-                <p>Nullam ornare, odio eu lacinia venenatis, dui purus varius odio, in pellentesque purus nibh in libero. Nullam magna felis.</p>
-                <a class="btn btn-social btn-facebook" href="#"><i class="icon-facebook"></i></a> <a class="btn btn-social btn-google-plus" href="#"><i class="icon-google-plus"></i></a> <a class="btn btn-social btn-twitter" href="#"><i class="icon-twitter"></i></a> <a class="btn btn-social btn-linkedin" href="#"><i class="icon-linkedin"></i></a>
-            </div>
-        </div>
-        <div class="span3">
-            <div class="box">
-                <p><img src="~/images/sample/team4.jpg" alt=""></p>
-                <h5>Charles Hester</h5>
-                <p>Nullam ornare, odio eu lacinia venenatis, dui purus varius odio, in pellentesque purus nibh in libero. Nullam magna felis.</p>
-                <a class="btn btn-social btn-facebook" href="#"><i class="icon-facebook"></i></a> <a class="btn btn-social btn-google-plus" href="#"><i class="icon-google-plus"></i></a> <a class="btn btn-social btn-twitter" href="#"><i class="icon-twitter"></i></a> <a class="btn btn-social btn-linkedin" href="#"><i class="icon-linkedin"></i></a>
-            </div>
-        </div>
+
+
+        }
+        <p>&nbsp;</p>
     </div>
-    <p>&nbsp;</p>
-    </section>
+</section>

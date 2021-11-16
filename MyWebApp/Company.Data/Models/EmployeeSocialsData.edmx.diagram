@@ -8,7 +8,7 @@
         <EntityTypeShape EntityType="MyWebAppModel1.Employee" Width="1.5" PointX="0.875" PointY="1.875" IsExpanded="true" />
         <EntityTypeShape EntityType="MyWebAppModel1.Social" Width="1.5" PointX="3.625" PointY="1.75" IsExpanded="true" />
         <AssociationConnector Association="MyWebAppModel1.FK_Socials_Employee" ManuallyRouted="false" />
-        <EntityTypeShape EntityType="MyWebAppModel1.User" Width="1.5" PointX="0.75" PointY="4.75" />
+        <EntityTypeShape EntityType="MyWebAppModel1.User" Width="1.5" PointX="0.75" PointY="4.75" IsExpanded="true" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

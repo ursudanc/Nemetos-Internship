@@ -16,6 +16,7 @@ namespace Company.Data.Models
 
     public partial class User
     {
+       
         public int UserID { get; set; }
         [DisplayName("User Name")]
         [Required(ErrorMessage = "This field is required.")]
