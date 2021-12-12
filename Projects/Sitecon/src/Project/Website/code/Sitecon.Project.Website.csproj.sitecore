@@ -1,0 +1,14 @@
+﻿<Project>
+  <PropertyGroup>
+    <Site Server="sitecone.dev.local" UserName="sitecore\admin" IsRemoteSitecore="True" />
+  </PropertyGroup>
+  <File Include="Views\Website\Layouts\Default.cshtml" FileTimestamp="0" FileSize="0" ServerTimestamp="0" ServerFileSize="0">
+    <Item DatabaseName="master">{9B29E008-222A-48EF-BB1E-A2882C07B0DA}</Item>
+  </File>
+  <File Include="/Views/Website/Layouts/Default.cshtml" FileTimestamp="0" FileSize="0" ServerTimestamp="0" ServerFileSize="0">
+    <Item DatabaseName="master">{9B29E008-222A-48EF-BB1E-A2882C07B0DA}</Item>
+  </File>
+  <File Include="/Views/Website/Layouts/Defaults.cshtml" FileTimestamp="0" FileSize="0" ServerTimestamp="0" ServerFileSize="0">
+    <Item DatabaseName="master">{ADC28918-90B4-439F-95A1-06714163B5ED}</Item>
+  </File>
+</Project>
