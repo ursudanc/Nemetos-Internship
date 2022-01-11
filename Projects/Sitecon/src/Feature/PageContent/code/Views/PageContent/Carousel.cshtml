@@ -1,0 +1,45 @@
+﻿@using Sitecore.Mvc
+@using Sitecore.Mvc.Presentation
+@using Sitecon.Feature.PageContent
+@using Sitecon.Foundation.SitecoreHelperExtensions
+@model Sitecon.Feature.PageContent.Models.Carousel
+  <!--Clients-->
+  <section id="clients" class="main">
+    <div class="container">
+      <div class="row-fluid">
+        <div class="span2">
+          <div class="clearfix">
+            <h4 class="pull-left">@Html.Sitecore().Field(Templates.Carousel.Fields.Title.ToString(), Model)</h4>
+            <div class="pull-right">
+              <a class="prev" href="#myCarousel" data-slide="prev"><i class="icon-angle-left icon-large"></i></a> <a class="next" href="#myCarousel" data-slide="next"><i class="icon-angle-right icon-large"></i></a>
+            </div>
+          </div>
+          <p>@Html.Sitecore().Field(Templates.Carousel.Fields.Text.ToString(), Model)</p>
+        </div>
+        <div class="span10">
+          <div id="myCarousel" class="carousel slide clients">
+            <!-- Carousel items -->
+            <div class="carousel-inner">
+              @foreach (var item in Model.CarouselList)
+              {
+                <div class="active item">
+                  <div class="row-fluid">
+                    <ul class="thumbnails">
+
+                      @foreach(var photo in item.CarouselItemList)
+                      {
+                      <li class="span3"><a href="#"><img src="@photo.CarouselItemImageUrl"></a></li>
+                      }
+
+                    </ul>
+                  </div>
+                </div>
+              }
+              </div>
+            <!-- /Carousel items -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!--/Clientes-->

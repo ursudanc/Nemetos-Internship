@@ -1,0 +1,34 @@
+﻿@using Sitecore.Mvc
+@using Sitecore.Mvc.Presentation
+@using Sitecon.Feature.PageContent
+@using Sitecon.Foundation.SitecoreHelperExtensions
+@model Sitecon.Feature.PageContent.Models.Portfolio
+<hr>
+<section id="portfolio" class="container main">
+  <ul class="gallery col-4">
+    @foreach (var item in Model.PhotoList)
+    {
+    <li>
+      <div class="preview">
+        <img alt=" " src="@item.ImageUrl">
+        <div class="overlay">
+        </div>
+        <div class="links">
+          <a data-toggle="modal" href="#modal-@item.number"><i class="icon-eye-open"></i></a><a href="#"><i class="icon-link"></i></a>
+        </div>
+      </div>
+      <div class="desc text-center">
+        <h5>@item.Title</h5>
+        <small>@item.Description</small>
+      </div>
+      <div id="modal-@item.number" class="modal hide fade">
+        <a class="close-modal" href="javascript:;" data-dismiss="modal" aria-hidden="true"><i class="icon-remove"></i></a>
+        <div class="modal-body">
+          <img src="@item.ImageUrl" alt=" " width="100%" style="max-height:400px">
+        </div>
+      </div>
+    </li>
+    }
+  </ul>
+</section>
+<hr>

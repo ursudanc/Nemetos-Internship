@@ -1,0 +1,49 @@
+﻿@using Sitecore.Mvc
+@using Sitecore.Mvc.Presentation
+@using Sitecon.Feature.PageContent
+@using Sitecon.Foundation.SitecoreHelperExtensions
+@model Sitecon.Feature.PageContent.Models.Services
+<hr >
+<section class="services">
+  <div class="container">
+    <div class="row-fluid">
+      @foreach (var item in Model.ComponentList)
+      {
+        if (item.nr <= 3)
+        {
+        <div class="span4">
+          <div class="center">
+            <i style="font-size: 48px" class="@item.Icon"></i>
+            <p> </p>
+            <h4>@item.Title</h4>
+            <p>@item.Text</p>
+          </div>
+        </div>
+        }
+      }
+    </div>
+    <hr>
+    <div class="row-fluid">
+      @foreach (var item in Model.ComponentList)
+      {
+        if (item.nr > 3)
+        {
+      <div class="span4">
+        <div class="center">
+          <i style="font-size: 48px" class="@item.Icon"></i>
+          <p> </p>
+          <h4>@item.Title</h4>
+          <p>@item.Text</p>
+        </div>
+      </div>
+        }
+      }
+    </div>
+    <hr>
+    <div class="center">
+      <a class="btn btn-primary btn-large" href="@Model.Link">@Model.Text</a>
+    </div>
+    <p>&nbsp;</p>
+  </div>
+</section>
+<hr>

@@ -8,12 +8,20 @@
   <ItemGroup>
     <None Remove="Views\Navigation\Footer.cshtml" />
     <None Remove="Views\Navigation\Header.cshtml" />
+    <None Remove="Views\Navigation\Navbar.cshtml" />
+    <None Remove="Views\Navigation\PageTitle.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Update="Views\Navigation\Footer.cshtml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Update="Views\Navigation\Header.cshtml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="Views\Navigation\Navbar.cshtml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="Views\Navigation\PageTitle.cshtml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>

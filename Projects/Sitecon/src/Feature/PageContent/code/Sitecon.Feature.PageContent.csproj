@@ -9,9 +9,21 @@
     <Content Remove="Views\PageContent\YouTubeVideo.cshtml" />
   </ItemGroup>
   <ItemGroup>
+    <None Remove="Views\PageContent\AboutUs.cshtml" />
     <None Remove="Views\PageContent\BodyCopy.cshtml" />
+    <None Remove="Views\PageContent\Carousel.cshtml" />
+    <None Remove="Views\PageContent\CompanyTeam.cshtml" />
+    <None Remove="Views\PageContent\Contact.cshtml" />
+    <None Remove="Views\PageContent\Error404.cshtml" />
+    <None Remove="Views\PageContent\FeaturedMainInfo.cshtml" />
+    <None Remove="Views\PageContent\IndexPart1.cshtml" />
     <None Remove="Views\PageContent\ListWithIcons.cshtml" />
+    <None Remove="Views\PageContent\MainWorkPhoto.cshtml" />
+    <None Remove="Views\PageContent\Portfolio.cshtml" />
+    <None Remove="Views\PageContent\PrivacyPolicy.cshtml" />
+    <None Remove="Views\PageContent\Services.cshtml" />
     <None Remove="Views\PageContent\Shared\_EventDetail.cshtml" />
+    <None Remove="Views\PageContent\Slider.cshtml" />
     <None Remove="Views\PageContent\TitleAndText.cshtml" />
     <None Remove="Views\PageContent\TwoImage.cshtml" />
   </ItemGroup>
@@ -19,13 +31,49 @@
     <ProjectReference Include="..\..\..\Foundation\SitecoreHelperExtensions\code\Sitecon.Foundation.SitecoreHelperExtensions.csproj" />
   </ItemGroup>
   <ItemGroup>
+    <Content Update="Views\PageContent\AboutUs.cshtml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Update="Views\PageContent\BodyCopy.cshtml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="Views\PageContent\Carousel.cshtml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="Views\PageContent\CompanyTeam.cshtml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="Views\PageContent\Contact.cshtml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="Views\PageContent\Error404.cshtml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="Views\PageContent\FeaturedMainInfo.cshtml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="Views\PageContent\IndexPart1.cshtml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Update="Views\PageContent\ListWithIcons.cshtml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Update="Views\PageContent\MainWorkPhoto.cshtml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="Views\PageContent\Portfolio.cshtml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="Views\PageContent\PrivacyPolicy.cshtml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="Views\PageContent\Services.cshtml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Update="Views\PageContent\Shared\_EventDetail.cshtml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="Views\PageContent\Slider.cshtml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Update="Views\PageContent\TitleAndText.cshtml">

@@ -11,6 +11,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <None Remove="Views\Website\Layouts\AltLayout.cshtml" />
     <None Remove="Views\Website\Layouts\Default.cshtml" />
   </ItemGroup>
   <ItemGroup>
@@ -18,6 +19,9 @@
     <Folder Include="assets\lib\flexslider\2.6.2\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Update="Views\Website\Layouts\AltLayout.cshtml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Update="Views\Website\Layouts\Default.cshtml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

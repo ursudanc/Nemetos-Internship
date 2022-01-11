@@ -1,0 +1,21 @@
+﻿@using Sitecore.Mvc
+@using Sitecore.Mvc.Presentation
+@using Sitecon.Feature.PageContent.Models
+@using Sitecon.Foundation.SitecoreHelperExtensions
+@model IndexPart1
+
+<hr>
+<section class="main-info">
+  <div class="container">
+    <div class="row-fluid">
+      <div class="span9">
+        <h4>@Model.Title</h4>
+        <p class="no-margin">@Model.Text</p>
+      </div>
+      <div class="span3">
+        <a class="btn btn-success btn-large pull-right" href="@Model.Link">Nulla ornare varius</a>
+      </div>
+    </div>
+  </div>
+</section>
+<hr>

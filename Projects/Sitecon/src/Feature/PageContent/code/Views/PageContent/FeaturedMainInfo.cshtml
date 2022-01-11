@@ -1,0 +1,61 @@
+﻿@using Sitecore.Mvc
+@using Sitecore.Mvc.Presentation
+@using Sitecon.Feature.PageContent
+@using Sitecon.Foundation.SitecoreHelperExtensions
+@model Sitecon.Feature.PageContent.Models.FeaturedMainInfo
+
+</div>
+<!--Services-->
+<section id="services">
+  <div class="container">
+    <div class="center gap">
+      <h3>@Html.Sitecore().Field(Templates.FeaturedMainInfo.Fields.FeaturedMainInfoTitle.ToString(), Model)</h3>
+      <p class="lead">@Html.Sitecore().Field(Templates.FeaturedMainInfo.Fields.FeaturedMainInfoText.ToString(), Model)</p>
+    </div>
+        <div class="row-fluid">
+    @foreach (var paragraph in Model.MainInfoList)
+    {
+     if(@paragraph.number<=3)
+      {
+      <div class="span4">
+        <div class="media">
+          <div class="pull-left">
+            <i class="@paragraph.ParagraphIcon"></i>
+          </div>
+          <div class="media-body">
+            <h4 class="media-heading">@paragraph.ParagraphTitle</h4>
+            <p>@paragraph.ParagraphText</p>
+          </div>
+        </div>
+    </div>
+        }
+ 
+    }
+        </div>
+  <div class="gap"></div>
+
+  <div class="row-fluid">
+         @foreach(var paragraph in Model.MainInfoList)
+          {
+            if (paragraph.number > 3)
+            {
+
+       <div class="span4">
+        <div class="media">
+          <div class="pull-left">
+            <i class="@paragraph.ParagraphIcon"></i>
+          </div>
+          <div class="media-body">
+            <h4 class="media-heading">@paragraph.ParagraphTitle</h4>
+            <p>@paragraph.ParagraphText</p>
+          </div>
+        </div>
+       </div>
+            }
+ 
+    }
+  </div>
+  </div>
+</section>
+</div>
+<!--/Services-->

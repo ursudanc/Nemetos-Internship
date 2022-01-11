@@ -1,0 +1,29 @@
+﻿@using Sitecore.Mvc
+@using Sitecore.Mvc.Presentation
+@using Sitecon.Feature.PageContent
+@using Sitecon.Foundation.SitecoreHelperExtensions
+@model Sitecon.Feature.PageContent.Models.CompanyTeam
+
+
+  <section id="about-us" class="container main">
+    <!-- Company team -->
+    <h1 class="center">@Model.Title</h1>
+    <hr>
+    <div class="row-fluid">
+      @foreach (var employee in @Model.EmployeesList)
+      {
+        <div class="span3">
+          <div class="box">
+            <p><img src="@employee.ImageUrl" alt=""></p>
+            <h5>@employee.Name</h5>
+            <p>@employee.Presentation</p>
+            <a class="btn btn-social btn-facebook" href="@employee.FacebookLink"><i class="icon-facebook"></i></a>
+            <a class="btn btn-social btn-google-plus" href="@employee.GoogleLink"><i class="icon-google-plus"></i></a>
+            <a class="btn btn-social btn-twitter" href="@employee.TwitterLink"><i class="icon-twitter"></i></a>
+            <a class="btn btn-social btn-linkedin" href="@employee.LinkedInLink"><i class="icon-linkedin"></i></a>
+          </div>
+        </div>
+      }
+    </div>
+    <p>&nbsp;</p>
+    </section>

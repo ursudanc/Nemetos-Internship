@@ -1,0 +1,36 @@
+﻿@using Sitecore.Mvc
+@using Sitecore.Mvc.Presentation
+@using Sitecon.Feature.Navigation
+@model Sitecon.Feature.Navigation.Models.Navbar
+<!--Header-->
+<div>
+  <header class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </a>
+        <a id="logo" class="pull-left" href="@Model.HomeLinkUrl"></a>
+        <div class="nav-collapse collapse pull-right">
+          <ul class="nav">
+            <li class="active"><a href="@Model.HomeLinkUrl">Home</a></li>
+            <li><a href="@Model.AboutUsLinkUrl">About Us</a></li>
+            <li><a href="@Model.ServicesLinkUrl">Services</a></li>
+            <li><a href="@Model.PortfolioLinkUrl">Portfolio</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Additional <i class="icon-angle-down"></i></a>
+              <ul class="dropdown-menu">
+                <li><a href="@Model.Error404LinkUrl">Error 404</a></li>
+                <li><a href="@Model.PrivacyPolicyLinkUrl">Privacy Policy</a></li>
+              </ul>
+            </li>
+            <li><a href="@Model.ContactLinkUrl">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </header>
+</div>
+<!-- /header -->

@@ -1,0 +1,10 @@
+﻿@using Sitecore.Mvc
+@using Sitecore.Mvc.Presentation
+@using Sitecon.Feature.PageContent
+@using Sitecon.Foundation.SitecoreHelperExtensions
+<hr>
+<section id="privacy-policy" class="container">
+  <h3>@Html.Sitecore().Field(Templates.PrivacyPolicy.Fields.Title)</h3>
+  <p>@Html.Sitecore().Field(Templates.PrivacyPolicy.Fields.Text) </p>
+</section>
+<hr>

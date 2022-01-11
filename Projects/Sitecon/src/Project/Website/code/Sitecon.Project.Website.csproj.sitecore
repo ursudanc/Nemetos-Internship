@@ -11,4 +11,8 @@
   <File Include="/Views/Website/Layouts/Defaults.cshtml" FileTimestamp="0" FileSize="0" ServerTimestamp="0" ServerFileSize="0">
     <Item DatabaseName="master">{ADC28918-90B4-439F-95A1-06714163B5ED}</Item>
   </File>
+  <File Include="Views\Website\Layouts\AltLayout.cshtml" FileTimestamp="0" FileSize="0" ServerTimestamp="0" ServerFileSize="0" />
+  <File Include="/Views/Website/Layouts/AltLayout.cshtml" FileTimestamp="0" FileSize="0" ServerTimestamp="0" ServerFileSize="0">
+    <Item DatabaseName="master">{3AB6A3E9-D3B1-45FE-A2C3-E09ABDF869EB}</Item>
+  </File>
 </Project>

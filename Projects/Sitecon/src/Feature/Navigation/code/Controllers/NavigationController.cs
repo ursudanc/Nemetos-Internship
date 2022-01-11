@@ -8,6 +8,7 @@ using System.Web.Mvc;
 using Sitecon.Feature.Navigation.Models;
 using Sitecore.Data.Fields;
 using Sitecore.Data.Items;
+using Sitecore.Diagnostics;
 
 namespace Sitecon.Feature.Navigation.Controllers
 {
@@ -114,6 +115,106 @@ namespace Sitecon.Feature.Navigation.Controllers
       footer.FooterLinkTextRight = item.Fields[Templates.Footer.Fields.FooterLinkTextRight].Value;
 
       return View(footer);
+    }
+
+
+    public ActionResult Navbar()
+    {
+      if (Sitecore.Context.Item == null)
+      {
+        return null;
+      }
+
+      var dataSourceId = RenderingContext.CurrentOrNull.Rendering.DataSource;
+      if (string.IsNullOrEmpty(dataSourceId))
+      {
+        return null;
+      }
+      var item = Sitecore.Context.Database.GetItem(dataSourceId);
+      if (item == null)
+      {
+        return null;
+      }
+
+      Navbar navbar = new Navbar();
+
+      //Image Field
+      ImageField logo = item.Fields[Templates.Navbar.Fields.Logo];
+      if (logo != null && logo.MediaItem != null)
+      {
+        MediaItem image = new MediaItem(logo.MediaItem);
+        navbar.ImageUrl = Sitecore.StringUtil.EnsurePrefix('/', Sitecore.Resources.Media.MediaManager.GetMediaUrl(image));
+        navbar.ImageAlt = image.Alt;
+      }
+
+      //Home Link - General Link with Search
+      LinkField HomeLink = item.Fields[Templates.Navbar.Fields.HomeLink];
+      navbar.HomeLinkUrl = HomeLink!= null
+        ? string.Format("{0}#{1}", Sitecore.Links.LinkManager.GetItemUrl(HomeLink.TargetItem), HomeLink.Anchor)
+        : string.Empty;
+
+
+      //About Us Link - General Link with Search
+      LinkField AboutUsLink = item.Fields[Templates.Navbar.Fields.AboutUs];
+      navbar.AboutUsLinkUrl = AboutUsLink != null
+        ? string.Format("{0}#{1}", Sitecore.Links.LinkManager.GetItemUrl(AboutUsLink.TargetItem), AboutUsLink.Anchor)
+        : string.Empty;
+
+      //Services Link - General Link with Search
+      LinkField ServicesLink = item.Fields[Templates.Navbar.Fields.Services];
+      navbar.ServicesLinkUrl = ServicesLink != null
+        ? string.Format("{0}#{1}", Sitecore.Links.LinkManager.GetItemUrl(ServicesLink.TargetItem), ServicesLink.Anchor)
+        : string.Empty;
+      
+      //Portfolio Link - General Link with Search
+      LinkField  PortfolioLink = item.Fields[Templates.Navbar.Fields.Portflio];
+      navbar.PortfolioLinkUrl = PortfolioLink != null
+        ? string.Format("{0}#{1}", Sitecore.Links.LinkManager.GetItemUrl(PortfolioLink.TargetItem), PortfolioLink.Anchor)
+        : string.Empty;
+      
+      //Error 404 Link - General Link with Search
+      LinkField Error404Link = item.Fields[Templates.Navbar.Fields.Error404];
+      navbar.Error404LinkUrl = Error404Link != null
+        ? string.Format("{0}#{1}", Sitecore.Links.LinkManager.GetItemUrl(Error404Link.TargetItem), Error404Link.Anchor)
+        : string.Empty;
+
+      //Privacy Policy Link - General Link with Search
+      LinkField PrivacyPolicyLink = item.Fields[Templates.Navbar.Fields.PrivacyPolicy];
+      navbar.PrivacyPolicyLinkUrl = PrivacyPolicyLink != null
+        ? string.Format("{0}#{1}", Sitecore.Links.LinkManager.GetItemUrl(PrivacyPolicyLink.TargetItem), PrivacyPolicyLink.Anchor)
+        : string.Empty;
+
+      //Contact Link - General Link with Search
+      LinkField ContactLink = item.Fields[Templates.Navbar.Fields.Contact];
+      navbar.ContactLinkUrl = ContactLink != null
+        ? string.Format("{0}#{1}", Sitecore.Links.LinkManager.GetItemUrl(ContactLink.TargetItem), ContactLink.Anchor)
+        : string.Empty;
+
+      return View(navbar);
+    }
+
+    public ActionResult PageTitle()
+        {
+      if (Sitecore.Context.Item == null)
+      {
+        return null;
+      }
+
+      var dataSourceId = Sitecore.Context.Item.ID.ToString();
+      Assert.IsNotNullOrEmpty(dataSourceId, "dataSourceId is null or empty");
+      var item = Sitecore.Context.Database.GetItem(dataSourceId);
+      PageTitle pagetitle = new PageTitle();
+      //Title of the page
+      pagetitle.Title = item.Fields[Templates.PageTitle.Fields.Title].Value;
+
+      // HomeLink with search
+      LinkField homeLink = item.Fields[Templates.PageTitle.Fields.HomeLink];
+      pagetitle.HomeLink = homeLink != null && homeLink.TargetItem != null
+          ? Sitecore.Links.LinkManager.GetItemUrl(homeLink.TargetItem)
+          : homeLink.Url;
+
+      return View(pagetitle);
+
     }
 
   }

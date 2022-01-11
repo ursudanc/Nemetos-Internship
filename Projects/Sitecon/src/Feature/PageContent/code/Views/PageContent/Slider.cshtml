@@ -1,0 +1,62 @@
+﻿@using Sitecore.Mvc
+@using Sitecore.Mvc.Presentation
+@using Sitecon.Feature.PageContent
+@using Sitecon.Foundation.SitecoreHelperExtensions
+
+
+<div>
+<!--Slider-->
+<section id="slide-show">
+  <div id="slider" class="sl-slider-wrapper">
+    <!--Slider Items-->
+    <div class="sl-slider">
+      <!--Slider Item1-->
+      <div class="sl-slide item1" data-orientation="horizontal" data-slice1-rotation="-25" data-slice2-rotation="-25" data-slice1-scale="2" data-slice2-scale="2">
+        <div class="sl-slide-inner">
+          <div class="container">
+            @Html.Sitecore().Field(Templates.Slider.Fields.Image1, new { @class = "pull-right" })
+            <h2>@Html.Sitecore().Field(Templates.Slider.Fields.Title1)</h2>
+            <h3 class="gap">@Html.Sitecore().Field(Templates.Slider.Fields.Text1)</h3>
+            <a class="btn btn-large btn-transparent" href="#">View More</a>
+          </div>
+        </div>
+      </div>
+      <!--/Slider Item1-->
+      <!--Slider Item2-->
+      <div class="sl-slide item2" data-orientation="vertical" data-slice1-rotation="10" data-slice2-rotation="-15" data-slice1-scale="1.5" data-slice2-scale="1.5">
+        <div class="sl-slide-inner">
+          <div class="container">
+            @Html.Sitecore().Field(Templates.Slider.Fields.Image2, new { @class = "pull-right" })
+            <h2>@Html.Sitecore().Field(Templates.Slider.Fields.Title2)</h2>
+            <h3 class="gap">@Html.Sitecore().Field(Templates.Slider.Fields.Text2)</h3>
+            <a class="btn btn-large btn-transparent" href="#">View More</a>
+          </div>
+        </div>
+      </div>
+      <!--Slider Item2-->
+      <!--Slider Item3-->
+      <div class="sl-slide item3" data-orientation="horizontal" data-slice1-rotation="3" data-slice2-rotation="3" data-slice1-scale="2" data-slice2-scale="1">
+        <div class="sl-slide-inner">
+          <div class="container">
+            @Html.Sitecore().Field(Templates.Slider.Fields.Image3, new { @class = "pull-right" })
+            <h2>@Html.Sitecore().Field(Templates.Slider.Fields.Title3)</h2>
+            <h3 class="gap">@Html.Sitecore().Field(Templates.Slider.Fields.Text3)</h3>
+            <a class="btn btn-large btn-transparent" href="#">View More</a>
+          </div>
+        </div>
+      </div>
+      <!--Slider Item3-->
+    </div>
+    <!--/Slider Items-->
+    <!--Slider Next Prev button-->
+    <nav id="nav-arrows" class="nav-arrows">
+      <span class="nav-arrow-prev"><i class="icon-angle-left"></i></span>
+      <span class="nav-arrow-next"><i class="icon-angle-right"></i></span>
+    </nav>
+    <!--/Slider Next Prev button-->
+  </div>
+  <!-- /slider-wrapper -->
+</section>
+<!--/Slider-->
+
+  </div>

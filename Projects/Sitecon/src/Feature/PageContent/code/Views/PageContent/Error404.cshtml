@@ -1,0 +1,13 @@
+﻿@using Sitecore.Mvc
+@using Sitecore.Mvc.Presentation
+@using Sitecon.Feature.PageContent
+@using Sitecon.Foundation.SitecoreHelperExtensions
+@model Sitecon.Feature.PageContent.Models.Error404
+<br >
+<!-- 404 error -->
+<section id="error" class="container">
+  <h1>@Model.Title</h1>
+  <p>@Model.Text</p>
+  <a class="btn btn-success" href="@Model.Link">GO BACK TO THE HOMEPAGE</a>
+</section>
+<br >

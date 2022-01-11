@@ -32,5 +32,30 @@ namespace Sitecon.Feature.Navigation
 
       }
     }
+
+    public static class Navbar
+    {
+      public static class Fields
+      {
+        public static readonly ID Logo = new ID("{DDA56F00-2464-44F4-820B-7181D0838B27}");
+        public static readonly ID HomeLink = new ID("{CD727B13-DB2F-4105-AB09-C8BEDF8DE4A4}");
+        public static readonly ID AboutUs = new ID("{497AFA1A-CA56-4E8D-A427-D578C07A5391}");
+        public static readonly ID Services= new ID("{67A81094-7BF0-4D2B-BB73-D2A033CD2571}");
+        public static readonly ID Portflio = new ID("{33F20AE6-D854-43E3-9B4F-2B95473FF87A}");
+        public static readonly ID Error404 = new ID("{D4D5D092-CC63-4449-8D40-AA1525D0ADBC}");
+        public static readonly ID PrivacyPolicy = new ID("{66773942-B406-4575-9FD0-063BB91040F4}");
+        public static readonly ID Contact = new ID("{CC7F2672-34B4-4942-AC24-B3B8FADC55E4}");
+      }
+    }
+
+    public static class PageTitle
+    {
+      public static class Fields
+      {
+        public static readonly ID Title = new ID("{76540F7F-3EC8-40E1-B95D-6E9CF5701B4D}");
+        public static readonly ID HomeLink = new ID("{2362003D-1F1B-4671-B212-495DB4D2C391}");
+        
+      }
+    }
   }
 }
